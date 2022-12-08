@@ -10,17 +10,41 @@ import { Component } from 'react'
 interface ClassComponentProps {
   subTitle: string
   count: number
+  customClassName?: string
+}
+
+interface ClassComponentState {
+  selectedName: string
 }
 
 // the props interface gets linked to the component thanks to the <> type argument
 // expressed after the class definition
-class ClassComponent extends Component<ClassComponentProps> {
+class ClassComponent extends Component<
+  ClassComponentProps,
+  ClassComponentState
+> {
+  state = {
+    selectedName: 'Alexander',
+  }
+
   render() {
     return (
       <div>
-        <h1>Class TS Component!</h1>
+        <h1 className={this.props.customClassName || ''}>
+          Class TS Component!
+        </h1>
         <h2>{this.props.subTitle}</h2>
         <p>{this.props.count}</p>
+        <h3
+          onClick={() =>
+            this.setState({
+              selectedName:
+                this.state.selectedName === 'Alexander' ? 'Olaf' : 'Alexander',
+            })
+          }
+        >
+          {this.state.selectedName}
+        </h3>
       </div>
     )
   }
