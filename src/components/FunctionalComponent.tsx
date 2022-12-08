@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 interface FunctionalComponentProps {
   subTitle: string
@@ -24,6 +26,8 @@ const FunctionalComponent = ({
   const [selectedName, setSelectedName] = useState('Alexander')
 
   const [selectedPasta, setSelectedPasta] = useState<null | PastaObject>(null)
+
+  const navigate = useNavigate()
 
   return (
     <div>
@@ -58,6 +62,9 @@ const FunctionalComponent = ({
           </div>
         )}
       </div>
+      <Button variant="warning" onClick={() => navigate('/class')}>
+        GO TO CLASS
+      </Button>
     </div>
   )
 }

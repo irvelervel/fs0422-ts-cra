@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 // in here we have to tell TS that this component should receive a prop of subTitle
 // every Class Component by default just expects an EMPTY props object {}
@@ -45,6 +46,9 @@ class ClassComponent extends Component<
         >
           {this.state.selectedName}
         </h3>
+        <Link to="/form">
+          <div className="btn btn-warning">GO TO FORM</div>
+        </Link>
       </div>
     )
   }
