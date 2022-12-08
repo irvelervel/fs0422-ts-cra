@@ -6,6 +6,7 @@ import ClassComponent from './components/ClassComponent'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MyNavbar from './components/MyNavbar'
 import FunctionalComponent from './components/FunctionalComponent'
+import FetchComponent from './components/FetchComponent'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               }
             />
             <Route path="/form" element={<BootstrapComponent />} />
+            <Route path="/fetch" element={<FetchComponent />} />
           </Routes>
         </header>
       </div>
